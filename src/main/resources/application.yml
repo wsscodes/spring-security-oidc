@@ -1,0 +1,18 @@
+server:
+  port: 8081
+  
+logging:
+  level:
+    org.springframework.web.client.RestTemplate: DEBUG
+    org.springframework.security.oauth2: DEBUG
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: oidc-cookie
+            client-secret: bXgQyKuNgJSYa8nyfYwjNAxnQsbt18Tr
+        provider:
+          keycloak:
+            issuer-uri: http://sso.example.com:9080/auth/realms/heroes
