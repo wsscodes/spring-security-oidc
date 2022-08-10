@@ -20,8 +20,8 @@ public class SecurityConfig {
         http.authorizeRequests(authorizeRequests -> authorizeRequests.mvcMatchers("/home")
               .permitAll()
               .anyRequest()
-                .authenticated())
-            // .oauth2Login(oauthLogin -> oauthLogin.permitAll())
+				.authenticated())
+              .oauth2Login(oauthLogin -> oauthLogin.permitAll())
 
             .logout(logout -> logout.logoutSuccessHandler(oidcLogoutSuccessHandler()));
         return http.build();
@@ -32,7 +32,7 @@ public class SecurityConfig {
 		OidcClientInitiatedLogoutSuccessHandler oidcLogoutSuccessHandler = new OidcClientInitiatedLogoutSuccessHandler(
 				this.clientRegistrationRepository);
 
-		oidcLogoutSuccessHandler.setPostLogoutRedirectUri("http://demo1.example.com:8081/home");
+		oidcLogoutSuccessHandler.setPostLogoutRedirectUri("http://127.0.0.1:8081/home");
 
 		return oidcLogoutSuccessHandler;
 	}

@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserRestController {
 
+	//user/oidc-principal
 	@GetMapping("/oidc-principal")
 	public OidcUser getOidcUserPrincipal(@AuthenticationPrincipal OidcUser principal) {
 		OidcUser principal1 = null;
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (authentication.getPrincipal() instanceof OidcUser) {
 			principal1 = ((OidcUser) authentication.getPrincipal());
-
 		}
 		return principal1;
 	}

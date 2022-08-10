@@ -4,7 +4,7 @@ server:
 logging:
   level:
     org.springframework.web.client.RestTemplate: DEBUG
-    org.springframework.security.oauth2: DEBUG
+    org.springframework.security: DEBUG
 spring:
   security:
     oauth2:
@@ -12,7 +12,7 @@ spring:
         registration:
           keycloak:
             client-id: oidc-cookie
-            client-secret: bXgQyKuNgJSYa8nyfYwjNAxnQsbt18Tr
+            client-secret: hJi8KEDNjGJ6W5PKE93HwgLx28UkTRAE
         provider:
           keycloak:
-            issuer-uri: http://sso.example.com:9080/auth/realms/heroes
+            issuer-uri: http://127.0.0.1:8080/auth/realms/heroes
